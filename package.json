@@ -1,0 +1,40 @@
+{
+  "name": "jobsnotifier-whatsapp-bot",
+  "version": "1.0.0",
+  "description": "Automated job vacancy and recruitment notification monitoring with scheduled checks and WhatsApp delivery.",
+  "private": true,
+  "license": "UNLICENSED",
+  "author": "Divyanshu Verma (https://github.com/divyanshu76)",
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning index.js",
+    "once": "node --disable-warning=ExperimentalWarning index.js --once",
+    "dry-run": "node --disable-warning=ExperimentalWarning index.js --dry-run",
+    "preview": "node --disable-warning=ExperimentalWarning scripts/preview.js",
+    "send-one": "node --disable-warning=ExperimentalWarning scripts/send-one.js",
+    "seed": "node --disable-warning=ExperimentalWarning index.js --seed",
+    "login": "node --disable-warning=ExperimentalWarning index.js --login",
+    "groups": "node scripts/list-groups.js",
+    "test-message": "node --disable-warning=ExperimentalWarning index.js --test-message",
+    "db": "node --disable-warning=ExperimentalWarning scripts/jobs-db.js",
+    "supervise": "node scripts/supervisor.js",
+    "check": "node scripts/check.js",
+    "test": "node --disable-warning=ExperimentalWarning --test --test-concurrency=1 \"test/*.test.js\""
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^7.0.0-rc14",
+    "axios": "^1.20.0",
+    "cheerio": "^1.2.0",
+    "dotenv": "^17.4.2",
+    "link-preview-js": "^3.2.0",
+    "node-cron": "^4.6.0",
+    "pdfjs-dist": "^6.4.299",
+    "pino": "^10.3.1",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.34.7"
+  }
+}
